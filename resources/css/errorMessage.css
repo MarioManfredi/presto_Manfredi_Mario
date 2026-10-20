@@ -1,0 +1,26 @@
+/* create-article */
+.error-custom{
+  
+  display: block;
+  margin-top: 3px;
+  padding: 8px 10px;
+  border-left: 3px solid oklch(62.793% 0.25768 29.223);
+  background-color: rgba(220, 53, 69, 0.08);
+  color: rgb(220, 53, 69);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  animation: compareIn .3s ease;
+
+}
+
+@keyframes compareIn{
+    from{
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

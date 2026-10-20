@@ -1,0 +1,53 @@
+/* card */
+.btn-card{
+
+  color: black;
+  border: 1px solid black;
+  font-weight: 700;
+  transition: 0.3s;
+
+}
+
+.btn-card:focus{
+
+  border: none;
+
+}
+
+.card-custom{
+
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+
+}
+
+.card-custom:hover{
+
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  
+}
+
+.card-header{
+
+  background-color: #f8f5eb;
+  border-bottom: 1px solid #ece7d8;
+  font-weight: 600;
+
+}
+
+.card-title{
+
+  font-size: 25px;
+  font-weight: 700;
+
+}
+
+.category{
+
+  font-size: 15px;
+
+}

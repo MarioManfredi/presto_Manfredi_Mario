@@ -15,7 +15,21 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{{route('article.create')}}">Crea Annuncio</a>
                     </li>
-                 @endauth
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{route('article.index')}}">Tutti gli Articoli</a>
+                    </li>
+                @endauth
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorie
+                    </a>
+                    <ul class="dropdown-menu">
+                        @foreach ($categories as $category)
+                            <li><a class="dropdown-item" href="{{route('byCategory', ['category'=>$category])}}">{{$category->name}}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+                
                 @guest
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
