@@ -13,6 +13,13 @@ h1, h2, h3, .h1, .h2, .h3{
 
 
 /* navbar */
+
+.color1{
+
+  color: black;
+
+}
+
 .btn-custom{
 
   background: linear-gradient(135deg, #FFFAE5);

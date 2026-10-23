@@ -18,6 +18,21 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{{route('article.index')}}">Tutti gli Articoli</a>
                     </li>
+
+                    @if (Auth::user()->is_revisor)
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" aria-current="page" href="{{route('revisor.index')}}">Zona revisione
+                                <span class="position-absolute color1" style="left: 91%; top:-7%;"> {{ \App\Models\Article::revisedCount() }}</span>
+                            </a>
+                        </li>
+                    @endif
+
+                    @if (!Auth::user()->is_revisor)
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{route('revisor.form')}}">Lavora con Noi</a>
+                    </li>
+                    @endif
+                    
                 @endauth
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
