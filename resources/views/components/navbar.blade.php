@@ -44,7 +44,32 @@
                         @endforeach
                     </ul>
                 </li>
-                
+                <li class="nav-item">
+                        <form action="{{route('article.search')}}" method="GET">
+                            <div class="input-group">
+                                <input type="search" name="query" class="form-control" placeholder="Search" aria-label="Search">
+                                <input type="hidden" name="field" id="field" value="all">
+
+                                <div class="dropdown">
+                                    <button class="btn btn-search dropdown-toggle" type="button" data-bs-toggle="dropdown">Ricerca in</button>
+
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#" onclick="document.getElementById('field').value='all'; document.getElementById('selectedField').innerText='Titolo e Descrizione'; return false;">Titolo e Descrizione</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#" onclick="document.getElementById('field').value='title'; document.getElementById('selectedField').innerText='Titolo'; return false;">Titolo</a>
+                                        </li>
+                                        <li>
+                                           <a class="dropdown-item" href="#" onclick="document.getElementById('field').value='description'; document.getElementById('selectedField').innerText='Descrizione'; return false;">Descrizione</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <button type="submit" class="input-group-text btn btn-custom" id="basic-addon2">Search</button>
+                            </div>
+                        </form>
+                </li>
                 @guest
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

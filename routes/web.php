@@ -40,3 +40,6 @@ Route::get('/revisor/make/{user}', [RevisorController::class, 'makeRevisor'])->n
 
 // revisor cancel
 Route::patch('/revisor/cancel', [RevisorController::class, 'cancel'])->name('revisor.cancel');
+
+// search
+Route::get('/article/search', [PublicController::class, 'searchArticles'])->name('article.search');

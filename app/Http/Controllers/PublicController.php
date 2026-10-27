@@ -16,4 +16,31 @@ class PublicController extends Controller
 
     }
 
+    public function searchArticles(Request $request) {
+
+        $query = $request->input('query');
+        $field = $request->input('field');
+        $articles = Article::where('is_accepted', true);
+
+        if ($field == 'title') {
+
+            $articles->where('title', 'LIKE', "%{$query}%");
+
+        } elseif ($field == 'description') {
+
+            $articles->where('description', 'LIKE', "%{$query}%");
+
+        } else {
+
+            $articles->where(function ($q) use ($query) { 
+                $q->where('title', 'LIKE', "%{$query}%")->orWhere('description', 'LIKE', "%{$query}%");
+            });
+
+        }
+
+        $articles = $articles->latest()->paginate(6);
+
+        return view('article.search', ['articles' => $articles, 'query' => $query]);
+    }
+
 }
