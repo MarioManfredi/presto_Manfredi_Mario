@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md bg-custom">
+<nav class="navbar navbar-expand-lg bg-custom">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{route('welcome')}}">
             <img src="/logo/logo.png" class="img-fluid" width="50px" alt="Logo Presto">
@@ -44,18 +44,20 @@
                         @endforeach
                     </ul>
                 </li>
-                <li class="nav-item">
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item me-custom">
                         <form action="{{route('article.search')}}" method="GET">
                             <div class="input-group">
                                 <input type="search" name="query" class="form-control" placeholder="Search" aria-label="Search">
                                 <input type="hidden" name="field" id="field" value="all">
 
                                 <div class="dropdown">
-                                    <button class="btn btn-search dropdown-toggle" type="button" data-bs-toggle="dropdown">Ricerca in</button>
+                                    <button class="btn btn-search dropdown-toggle" type="button" data-bs-toggle="dropdown"><span id="selectedField">Ricerca in</span></button>
 
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" href="#" onclick="document.getElementById('field').value='all'; document.getElementById('selectedField').innerText='Titolo e Descrizione'; return false;">Titolo e Descrizione</a>
+                                            <a class="dropdown-item" href="#" onclick="document.getElementById('field').value='all'; document.getElementById('selectedField').innerText='Tutto'; return false;">All</a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="#" onclick="document.getElementById('field').value='title'; document.getElementById('selectedField').innerText='Titolo'; return false;">Titolo</a>
@@ -63,10 +65,13 @@
                                         <li>
                                            <a class="dropdown-item" href="#" onclick="document.getElementById('field').value='description'; document.getElementById('selectedField').innerText='Descrizione'; return false;">Descrizione</a>
                                         </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#" onclick="document.getElementById('field').value='category'; document.getElementById('selectedField').innerText='Categoria'; return false;">Categoria</a>
+                                        </li>
                                     </ul>
                                 </div>
 
-                                <button type="submit" class="input-group-text btn btn-custom" id="basic-addon2">Search</button>
+                                <button type="submit" class="input-group-text btn btn-custom-search" id="basic-addon2">Search</button>
                             </div>
                         </form>
                 </li>

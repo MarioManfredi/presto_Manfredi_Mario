@@ -22,15 +22,32 @@ h1, h2, h3, .h1, .h2, .h3{
 
 .btn-custom{
 
-  background: linear-gradient(135deg, #FFFAE5);
-  color: black;
+  background-color: #696565ad;
+  color: white;
   border: none;
+  border-radius: 10px;
+  padding: 8px 15px;
   font-weight: 700;
   transition: 0.3s;
 
 }
 
 .btn-custom:hover{
+
+  transform: scale(1.05);
+
+}
+
+.btn-custom-search{
+
+  background-color: #FFFAE5;
+  border: none;
+  font-weight: 700;
+  transition: 0.3s;
+
+}
+
+.btn-custom-search:hover{
 
   transform: scale(1.05);
 
@@ -64,6 +81,13 @@ h1, h2, h3, .h1, .h2, .h3{
 
 }
 
+.me-custom{
+
+  margin-right: 40px;
+
+}
+
+
 /* navbar, layout */
 .bg-custom{
 
@@ -84,9 +108,11 @@ h1, h2, h3, .h1, .h2, .h3{
 /* welcome */
 .btn-adv{
 
-  background-color: #FFFAE5;
-  color: black;
-  border: 1px solid black;
+  background-color: #696565ad;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
   font-weight: 700;
   transition: 0.3s;
 

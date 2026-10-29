@@ -30,10 +30,16 @@ class PublicController extends Controller
 
             $articles->where('description', 'LIKE', "%{$query}%");
 
+        } elseif ($field == 'category') {
+
+            $articles->whereHas('category', function ($q) use ($query) { $q->where('name', 'LIKE', "%{$query}%"); });
+
         } else {
 
             $articles->where(function ($q) use ($query) { 
-                $q->where('title', 'LIKE', "%{$query}%")->orWhere('description', 'LIKE', "%{$query}%");
+
+                $q->where('title', 'LIKE', "%{$query}%")->orWhere('description', 'LIKE', "%{$query}%")->orWhereHas('category', function ($q) use ($query) { $q->where('name', 'LIKE', "%{$query}%"); });
+        
             });
 
         }

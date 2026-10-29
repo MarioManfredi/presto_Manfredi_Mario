@@ -7,7 +7,7 @@
         <h6 class="lead">{{$article->price}} €</h6>
         <p class="card-text">{{$article->description}}</p>
         <p class="card-text category">#{{$article->category->name}}</p>
-        <a href="{{route('article.show', compact('article'))}}" class="btn btn-card">Dettaglio</a>
+        <a href="{{route('article.show', compact('article'))}}" class="btn btn-card">Dettaglio →</a>
     </div>
     <div class="card-footer text-body-secondary">
         {{$article->created_at->format('d/m/Y H:i')}}

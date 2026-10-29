@@ -42,6 +42,7 @@
                     <h6>Categoria</h6>
                     <p class="card-text category">#{{$article->category->name}}</p>
                 
+                    <a href="{{route('article.index')}}" class="btn btn-card">Torna indietro</a>
                 </div>
             </div>
         </div>

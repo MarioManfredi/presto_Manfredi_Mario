@@ -2,7 +2,7 @@
     
     <x-masthead title="Revisione Articoli"/>
         
-        <div class="text-center">
+        <div class="text-center mt-2">
             <form action="{{route('revisor.cancel', ['article' => $article])}}" method="POST">
                 @csrf
                 @method('PATCH')
@@ -54,12 +54,12 @@
                             <form action="{{route('revisor.reject', ['article' => $article])}}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button class="btn btn-custom px-4">Rifiuta</button>
+                                <button class="btn btn-custom">Rifiuta</button>
                             </form>
                             <form action="{{route('revisor.accept', ['article' => $article])}}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button class="btn btn-custom px-4">Accetta</button>
+                                <button class="btn btn-custom ms-4">Accetta</button>
                             </form>
                         </div>
                     </div>
