@@ -43,3 +43,6 @@ Route::patch('/revisor/cancel', [RevisorController::class, 'cancel'])->name('rev
 
 // search
 Route::get('/article/search', [PublicController::class, 'searchArticles'])->name('article.search');
+
+// languages
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');

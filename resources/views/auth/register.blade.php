@@ -1,6 +1,6 @@
 <x-layout>
     
-    <x-masthead title="Registrati"/>
+    <x-masthead title="{{ __('ui.pageRegister') }}"/>
 
     <x-errors/>
 

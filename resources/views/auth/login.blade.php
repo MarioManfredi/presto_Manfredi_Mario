@@ -1,6 +1,6 @@
 <x-layout>
     
-    <x-masthead title="Accedi"/>
+    <x-masthead title="{{ __('ui.pageLogin') }}"/>
     
     <x-errors/>
 

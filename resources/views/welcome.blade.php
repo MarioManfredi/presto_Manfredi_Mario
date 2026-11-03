@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-masthead title="Presto"/>
+    <x-masthead title="{{ __('ui.homepage') }}"/>
 
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -9,7 +9,7 @@
 
             <div class="col-12 col-md-6 d-flex justify-content-center">
                 @auth
-                    <a href="{{route('article.create')}}" class="btn btn-adv">Inserisci Annuncio</a>
+                    <a href="{{route('article.create')}}" class="btn btn-adv">{{ __('ui.insertAd') }}</a>
                 @endauth
             </div>
         </div>

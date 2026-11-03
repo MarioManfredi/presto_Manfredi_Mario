@@ -1,6 +1,6 @@
 <x-layout>
     
-    <x-masthead title="{{$category->name}}"/>
+    <x-masthead title="{{ __('ui.' .$category->name) }}"/>
 
     <div class="container mt-5">
         <div class="row mt-5 justify-content-center align-items-center">

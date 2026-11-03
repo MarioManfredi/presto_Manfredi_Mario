@@ -1,6 +1,6 @@
 <x-layout>
     
-    <x-masthead title="Lavora con noi"/>
+    <x-masthead title="{{ __('ui.work') }}"/>
     
     <x-errors/>
 

@@ -1,6 +1,6 @@
 <x-layout>
     
-    <x-masthead title="Tutti gli Articoli"/>
+    <x-masthead title="{{ __('ui.allArticles') }}"/>
 
 
 

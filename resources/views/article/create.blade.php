@@ -1,6 +1,6 @@
 <x-layout>
     
-    <x-masthead title="Pubblica un Articolo"/>
+    <x-masthead title="{{ __('ui.publicArticle') }}"/>
 
 
 

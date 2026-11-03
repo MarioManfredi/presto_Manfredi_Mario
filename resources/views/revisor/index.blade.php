@@ -1,6 +1,6 @@
 <x-layout>
     
-    <x-masthead title="Revisione Articoli"/>
+    <x-masthead title="{{ __('ui.revisionArticle') }}"/>
         
         <div class="text-center mt-2">
             <form action="{{route('revisor.cancel', ['article' => $article])}}" method="POST">
