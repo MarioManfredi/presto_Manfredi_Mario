@@ -21,15 +21,24 @@
                         <div class="py-3">
                             <span class="fw-bold">Creato da {{$article->user->name}}</span> il {{$article->created_at->format('d/m/Y H:i')}}
                         </div>
-
+                        
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
                                 
-                                @for($i = 0; $i < 3; $i++)
-                                    <div class="swiper-slide">
-                                        <img src="https://picsum.photos/400?random={{ $i }}" class="d-block img-custom shadow img-fluid" alt="{{$i}}">
-                                    </div>
-                                @endfor
+                                @if ($article->images->count())
+
+                                    @foreach ($article->images as $image)
+                                        <div class="swiper-slide">
+                                            <img src="{{ Storage::url($image->path) }}" class="d-block img-custom-user shadow img-fluid" alt="{{ $article->title }}">
+                                        </div>
+                                    @endforeach
+                                @else
+                                    @for ($i = 0; $i < 6; $i++)
+                                        <div class="swiper-slide">
+                                            <img src="https://picsum.photos/400?random={{ $i }}" class="d-block img-custom-user shadow img-fluid" alt="Immagine segnaposto {{ $i + 1 }}">
+                                        </div>
+                                    @endfor
+                                @endif
 
                             </div>
                             <div class="swiper-button-next"></div>

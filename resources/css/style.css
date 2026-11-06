@@ -131,8 +131,10 @@ h1, h2, h3, .h1, .h2, .h3{
 }
 
 /* swiper */
-.img-custom{
 
+.img-custom-user{
+
+  height: 450px;
   width: 100%;
   object-fit: cover;
 
@@ -151,4 +153,15 @@ h1, h2, h3, .h1, .h2, .h3{
 
   background: black !important;
 
+}
+
+/* create-article */
+.img-preview{
+
+  height: 120px;
+  width: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }

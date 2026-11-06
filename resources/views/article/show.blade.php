@@ -13,21 +13,37 @@
 
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="https://picsum.photos/400" class="d-block img-custom shadow img-fluid" alt="...">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://picsum.photos/401" class="d-block img-custom shadow img-fluid" alt="...">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://picsum.photos/402" class="d-block img-custom shadow img-fluid" alt="...">
-                            </div>
+
+                                @if ($article->images->count())
+                        
+                                    @foreach ($article->images as $image)
+                                        <div class="swiper-slide">
+                                            <img src="{{ Storage::url($image->path) }}" class="d-block img-custom-user shadow img-fluid" alt="{{ $article->title }}">
+                                        </div>
+                                    @endforeach
+                                @else
+                                    @for ($i = 0; $i < 6; $i++)
+                                        <div class="swiper-slide">
+                                            <img src="https://picsum.photos/400?random={{ $i }}" class="d-block img-custom-user shadow img-fluid" alt="Immagine segnaposto {{ $i + 1 }}">
+                                        </div>
+                                    @endfor
+                                @endif
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-pagination"></div>
                     </div>
                     
+                    @if ($article->images->count())
+                        <div class="py-3">
+                            <span>Immagini inserite dall'utente</span>
+                        </div>
+                    @else
+                        <div class="py-3">
+                            <span>Immagini random inserite</span>
+                        </div>
+                    @endif
+
                 </div>
                 <div class="col-12 col-md-8 text-center">
                     <h6>Titolo</h6>

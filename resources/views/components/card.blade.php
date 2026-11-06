@@ -7,7 +7,11 @@
         <h6 class="lead">{{$article->price}} €</h6>
         <p class="card-text">{{$article->description}}</p>
         <p class="card-text category">#{{$article->category->name}}</p>
-        <a href="{{route('article.show', compact('article'))}}" class="btn btn-card">Dettaglio →</a>
+        <img src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}" alt="Immagine dell'articolo {{$article->title}}" class="img-custom-index">
+        <div class="d-flex justify-content-center mt-3">
+            <a href="{{route('article.show', compact('article'))}}" class="btn btn-card">Dettaglio →</a>
+        </div>
+        
     </div>
     <div class="card-footer text-body-secondary">
         {{$article->created_at->format('d/m/Y H:i')}}
