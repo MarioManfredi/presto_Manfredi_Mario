@@ -29,7 +29,7 @@
 
                                     @foreach ($article->images as $image)
                                         <div class="swiper-slide">
-                                            <img src="{{ Storage::url($image->path) }}" class="d-block img-custom-user shadow img-fluid" alt="{{ $article->title }}">
+                                            <img src="{{ $image->getUrl(400, 400) }}" class="d-block shadow img-fluid img-custom-user" alt="{{ $article->title }}">
                                         </div>
                                     @endforeach
                                 @else
