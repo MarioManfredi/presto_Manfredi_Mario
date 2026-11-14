@@ -30,6 +30,60 @@
                                     @foreach ($article->images as $image)
                                         <div class="swiper-slide">
                                             <img src="{{ $image->getUrl(400, 400) }}" class="d-block shadow img-fluid img-custom-user" alt="{{ $article->title }}">
+
+
+                                        <div class="mt-3">
+                                            <h6>Labels</h6>
+
+                                            @if($image->labels)
+                                                @foreach($image->labels as $label)
+                                                    <span class="badge bg-secondary me-1 mb-1">
+                                                        {{ $label }}
+                                                    </span>
+                                                @endforeach
+                                            @else
+                                                <p class="fst-italic">No labels</p>
+                                            @endif
+                                        </div>
+
+                                        <div class="mt-3">
+                                            <h6>Ratings</h6>
+
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <i class="{{ $image->adult }}"></i>
+                                                </div>
+                                                <div class="col-10">Adult</div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <i class="{{ $image->violence }}"></i>
+                                                </div>
+                                                <div class="col-10">Violence</div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <i class="{{ $image->spoof }}"></i>
+                                                </div>
+                                                <div class="col-10">Spoof</div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <i class="{{ $image->racy }}"></i>
+                                                </div>
+                                                <div class="col-10">Racy</div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <i class="{{ $image->medical }}"></i>
+                                                </div>
+                                                <div class="col-10">Medical</div>
+                                            </div>
+                                        </div>
                                         </div>
                                     @endforeach
                                 @else
