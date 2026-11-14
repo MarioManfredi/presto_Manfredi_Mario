@@ -27,4 +27,4 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 # Non mi fa pushare il file .google_credential.json e mi da errore anche se lo lascio qui nel .gitignore
-.google_credential.json
+google_credential.json
