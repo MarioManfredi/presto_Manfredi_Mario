@@ -47,7 +47,7 @@
                                         </div>
 
                                         <div class="mt-3">
-                                            <h6>Ratings </h6>
+                                            <h6>Ratings</h6>
 
                                             <div class="row">
                                                 <div class="col-2">
